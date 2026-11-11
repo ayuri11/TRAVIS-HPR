@@ -7,4 +7,5 @@
 - **Uniform-assumption IVTBC (259 pipes)**: replaced by the per-ring solution.
 - **Rod slots**: B4C is defined but the reference run fills the slots with sodium.
 - **Earlier OpenMC scripts** (`HPR_OpenMC.py`, `fix_fuel.py`): replaced by `Define_OpenMC.py`. The reference run used zone-1 U-235 = 12% and a 60 cm reflector radius, which the current scripts reproduce.
+- **snappyHexMesh and Gmsh meshing attempts** (STL-based pipe and fuel-pin meshes, `.geo` files): replaced by the structured `blockMesh` unit cell in `system/blockMeshDict`, which is the source of the solver mesh (12.7 mm pipe radius).
 Earlier files remain available in the git history of `ayuri11/openfoam-cases`.

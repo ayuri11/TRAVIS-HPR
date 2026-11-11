@@ -21,7 +21,7 @@ It is meant as the starting point for the optimization work that follows.
 |---|---|
 | `01_neutronics/` | OpenMC model (`Define_OpenMC.py`), pin-tally variant (`Define_OpenMC_pin.py`), XML inputs of the reference run |
 | `02_power_distribution/` | Statepoint to W/m3 (`extract_power.py`), ring binning, per-pipe loads (`pin_to_pipe.py`), plots; results in `data/` |
-| `03_thermal_hydraulics/` | Per-ring IVTBC driver (`ivtbc_multi_ring_v10.py`), OpenFOAM unit-cell case, meshing files, result JSONs |
+| `03_thermal_hydraulics/` | Per-ring IVTBC driver (`ivtbc_multi_ring_v10.py`), OpenFOAM unit-cell case (blockMesh), result JSONs |
 | `04_power_cycle/` | sCO2 Brayton results used for the sink temperature |
 | `common/` | `travis_layout.py`, lattice geometry shared by the pin-tally scripts |
 | `figures/` | Figures produced by the scripts |

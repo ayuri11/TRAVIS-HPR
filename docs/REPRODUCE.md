@@ -7,7 +7,7 @@ Run from the repository root with the `travis` environment active (OpenMC and Op
 2. **Power distribution.** `cd 02_power_distribution && python extract_power.py ../01_neutronics/statepoint.100.h5`, then
    `python check_ring_binning_v4.py 60`. Outputs go to `data/`; the ring totals should match `data/ring_binning_v4.json`
    (50,376 / 286,324 / 766,044 / 1,397,256 W).
-3. **Thermal reference case** (about 1 minute). The driver edits the OpenFOAM case in place, so work on a copy:
+3. **Thermal reference case** (about 1 minute). The solver mesh in `openfoam_case/constant/` was generated from `system/blockMeshDict` (12.7 mm pipe radius); the driver checks the mesh against `hp_radius` before running. The driver edits the OpenFOAM case in place, so work on a copy:
    ```
    cp -r 03_thermal_hydraulics/openfoam_case ~/HPR_case
    cd 03_thermal_hydraulics

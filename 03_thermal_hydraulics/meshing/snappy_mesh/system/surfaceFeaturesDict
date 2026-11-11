@@ -1,3 +1,0 @@
-FoamFile { format ascii; class dictionary; object surfaceFeaturesDict; }
-surfaces ( "heatPipe.stl" "fuelPin1.stl" "fuelPin2.stl" );
-includedAngle 150;
