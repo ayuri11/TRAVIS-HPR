@@ -1,0 +1,17 @@
+FoamFile { format ascii; class volScalarField; object T; }
+dimensions [0 0 0 1 0 0 0];
+internalField   uniform 1350.9906;
+boundaryField
+{
+    heatpipe_wall
+    {
+        type externalWallHeatFluxTemperature;
+        mode coefficient;
+        h               uniform 751.88;
+        Ta              uniform 1180.0400;
+        value           uniform 1180.0400;
+    }
+    outer_symmetry { type symmetry; }
+    front { type empty; }
+    back  { type empty; }
+}
