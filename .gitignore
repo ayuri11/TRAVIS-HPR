@@ -1,0 +1,26 @@
+# OpenMC outputs (large, regenerable)
+*.h5
+*.vtk
+*.vtu
+*.pvd
+01_neutronics/pin_tally.npz
+01_neutronics/pin_layout.json
+# numpy arrays are ignored except the one stored power array
+*.npy
+*.npz
+!02_power_distribution/data/power_density_3d.npy
+# OpenFOAM time directories and logs (keep the initial 0/ directory)
+03_thermal_hydraulics/openfoam_case/[1-9]*/
+03_thermal_hydraulics/openfoam_case/processor*/
+03_thermal_hydraulics/openfoam_case/postProcessing/
+03_thermal_hydraulics/openfoam_case/log.*
+03_thermal_hydraulics/openfoam_case/system/controlDict.pre_*
+03_thermal_hydraulics/openfoam_case/.ivtbc_*.lock
+# python / editors / OS
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+# large files go to Google Drive/Zenodo (see docs/REPRODUCE.md), never plain git
+*.zip
+*.mp4

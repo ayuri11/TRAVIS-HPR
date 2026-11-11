@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<tallies>
+  <mesh id="1">
+    <dimension>50 50 28</dimension>
+    <lower_left>-60.0 -60.0 -80.0</lower_left>
+    <upper_right>60.0 60.0 80.0</upper_right>
+  </mesh>
+  <filter id="1" type="mesh">
+    <bins>1</bins>
+  </filter>
+  <tally id="1" name="power_distribution">
+    <filters>1</filters>
+    <scores>heating flux</scores>
+  </tally>
+</tallies>
