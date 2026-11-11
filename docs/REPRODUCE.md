@@ -20,4 +20,10 @@ Run from the repository root with the `travis` environment active (OpenMC and Op
    `python 02_power_distribution/pin_to_pipe.py --Tinf 750 --L 1.82`. `--selftest` checks the post-processing without OpenMC.
 5. **Plots.** `python 02_power_distribution/plot_axial_power.py` and `plot_radial_power.py` write to `figures/power_distribution/`.
 
-Large files (statepoints, VTK, OpenFOAM time directories) are kept outside git.
+## Large files
+Statepoints, VTK files and OpenFOAM time directories are not in git. They are in the shared Drive folder:
+https://drive.google.com/drive/folders/192V2o4moqz5ajfOQsA7exomapnlnYKfs
+
+It holds the OpenMC statepoint and VTK export of the reference run, the converged OpenFOAM fields, the ParaView state files behind the
+figures, and backups of the working folders. Put downloaded files where the scripts expect them: `statepoint.100.h5` in `01_neutronics/`.
+Record the OpenMC version and cross-section library next to the statepoint.

@@ -33,7 +33,7 @@ It is meant as the starting point for the optimization work that follows.
 conda env create -f environment.yml && conda activate travis
 python 02_power_distribution/pin_to_pipe.py --selftest
 ```
-OpenMC and OpenFOAM are required for the full chain; see `docs/REPRODUCE.md`. Statepoints, VTK files and OpenFOAM time directories are not tracked.
+OpenMC and OpenFOAM are required for the full chain; see `docs/REPRODUCE.md`. Statepoints, VTK files and OpenFOAM time directories are not tracked; they are in the [shared Drive folder](https://drive.google.com/drive/folders/192V2o4moqz5ajfOQsA7exomapnlnYKfs).
 
 ## Where to start optimizing
 See `docs/NEXT_STEPS.md`.
