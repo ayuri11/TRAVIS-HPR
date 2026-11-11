@@ -1,0 +1,2 @@
+FoamFile { format ascii; class dictionary; object fvSolution; }
+solvers { p { solver PCG; preconditioner DIC; tolerance 1e-6; relTol 0; } }

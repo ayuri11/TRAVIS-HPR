@@ -1,0 +1,20 @@
+{
+  "design_revision": "v2 - updated HP parameters",
+  "N_pipes": 289,
+  "hp_radius_mm": 12.7,
+  "hp_radius_m": 0.0127,
+  "hp_area_m2": 0.1277,
+  "Q_per_pipe_W": 8651,
+  "q_flux_Wm2": 67755,
+  "r1_m2KW": 0.00133,
+  "r2_m2KW": 0.00334,
+  "gap_correction_K": 124,
+  "T_inf_K": 791.0,
+  "Tvap_K": 1141.3,
+  "Tvap_C": 868.15,
+  "Tm_wall_K": 1231.41,
+  "Tm_wall_C": 958.26,
+  "cladding_margin_K": 31.7,
+  "TRISO_margin_K": 368.6,
+  "basis": "KRUSTY 1/2-inch standard HP, Price et al. 2023 r2"
+}

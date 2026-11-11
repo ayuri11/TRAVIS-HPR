@@ -1,0 +1,54 @@
+{
+  "method": "analytical steady-state from energy conservation",
+  "design": "v2 - N=289, r_HP=12.7mm, r2=0.00334",
+  "results": {
+    "ring_0": {
+      "r_cm": 2.65,
+      "count": 1,
+      "Q_pipe_W": 158635.53863126802,
+      "q_flux_Wm2": 1242501.482441517,
+      "Tvap_K": 5064.954951354667,
+      "Tvap_C": 4791.8049513546675,
+      "Tm_K": 6717.481923001885,
+      "Tm_C": 6444.331923001885,
+      "safe_cladding": false,
+      "safe_TRISO": false
+    },
+    "ring_1": {
+      "r_cm": 8.15,
+      "count": 6,
+      "Q_pipe_W": 197515.92583365957,
+      "q_flux_Wm2": 1547029.3275491686,
+      "Tvap_K": 6082.077954014223,
+      "Tvap_C": 5808.927954014223,
+      "Tm_K": 8139.626959654617,
+      "Tm_C": 7866.4769596546175,
+      "safe_cladding": false,
+      "safe_TRISO": false
+    },
+    "ring_2": {
+      "r_cm": 13.65,
+      "count": 12,
+      "Q_pipe_W": 92885.86782447775,
+      "q_flux_Wm2": 727521.8999825822,
+      "Tvap_K": 3344.9231459418247,
+      "Tvap_C": 3071.7731459418246,
+      "Tm_K": 4312.527272918659,
+      "Tm_C": 4039.377272918659,
+      "safe_cladding": false,
+      "safe_TRISO": false
+    },
+    "ring_3": {
+      "r_cm": 19.15,
+      "count": 18,
+      "Q_pipe_W": 2313.249581835653,
+      "q_flux_Wm2": 18118.361493819095,
+      "Tvap_K": 975.5153273893558,
+      "Tvap_C": 702.3653273893558,
+      "Tm_K": 999.6127481761351,
+      "Tm_C": 726.4627481761352,
+      "safe_cladding": true,
+      "safe_TRISO": true
+    }
+  }
+}

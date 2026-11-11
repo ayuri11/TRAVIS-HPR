@@ -1,0 +1,78 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  10 (or your installed version)
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      T;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 0 1 0 0 0]; // Kelvin
+
+internalField   uniform 1145.62; // Initial guess for the graphite monolith
+
+boundaryField
+{
+    ring_0_hp
+    {
+        type            externalWallHeatFluxTemperature;
+        mode            coefficient;
+        Ta              constant 1145.62; 
+        h               constant 751.88;  // 1 / r1 = 1 / 0.00133
+        kappaMethod     solidThermo;      
+        value           $internalField;
+    }
+    ring_1_hp
+    {
+        type            externalWallHeatFluxTemperature;
+        mode            coefficient;
+        Ta              constant 1145.62;
+        h               constant 751.88;
+        kappaMethod     solidThermo;
+        value           $internalField;
+    }
+    ring_2_hp
+    {
+        type            externalWallHeatFluxTemperature;
+        mode            coefficient;
+        Ta              constant 1145.62;
+        h               constant 751.88;
+        kappaMethod     solidThermo;
+        value           $internalField;
+    }
+    ring_3_hp
+    {
+        type            externalWallHeatFluxTemperature;
+        mode            coefficient;
+        Ta              constant 1145.62;
+        h               constant 751.88;
+        kappaMethod     solidThermo;
+        value           $internalField;
+    }
+
+    // --- OTHER BOUNDARIES ---
+    // Update these names to match your constant/polyMesh/boundary file!
+
+    symmetryPlanes
+    {
+        type            symmetry; // or wedge, depending on your mesh setup
+    }
+
+    outerReflector
+    {
+        type            zeroGradient; // Adiabatic outer boundary
+    }
+
+    topAndBottom
+    {
+        type            zeroGradient; // Adiabatic top and bottom
+    }
+}
+// ************************************************************************* //

@@ -1,0 +1,38 @@
+{
+  "ring_0": {
+    "r_cm": 2.65,
+    "count": 1,
+    "q_hp_W": 17830.0,
+    "Tvap_K": 793.428247385144,
+    "Tvap_C": 520.278247385144,
+    "converged": true,
+    "iterations": 12
+  },
+  "ring_1": {
+    "r_cm": 8.15,
+    "count": 6,
+    "q_hp_W": 22200.0,
+    "Tvap_K": 794.0022495264575,
+    "Tvap_C": 520.8522495264575,
+    "converged": true,
+    "iterations": 12
+  },
+  "ring_2": {
+    "r_cm": 13.65,
+    "count": 12,
+    "q_hp_W": 10440.0,
+    "Tvap_K": 792.4576985425554,
+    "Tvap_C": 519.3076985425554,
+    "converged": true,
+    "iterations": 12
+  },
+  "ring_3": {
+    "r_cm": 19.15,
+    "count": 18,
+    "q_hp_W": 260.0,
+    "Tvap_K": 791.1207238133181,
+    "Tvap_C": 517.9707238133182,
+    "converged": true,
+    "iterations": 12
+  }
+}

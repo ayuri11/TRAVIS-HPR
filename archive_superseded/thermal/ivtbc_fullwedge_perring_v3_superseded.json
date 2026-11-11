@@ -1,0 +1,7 @@
+{
+  "note": "CFD-coupled IVTBC results, q_hp_W source: per_ring_power.json (Sep 6, 4-ring, unit-cell-count based). Traceability to be finalized - see open item.",
+  "ring_0": {"r_cm": 2.65, "Tvap_analytical_C": 1108.36, "Tvap_IVTBC_C": 779.43, "diff_K": 328.93, "safe": true},
+  "ring_1": {"r_cm": 8.15, "Tvap_analytical_C": 1222.72, "Tvap_IVTBC_C": 813.11, "diff_K": 409.62, "safe": true},
+  "ring_2": {"r_cm": 13.65, "Tvap_analytical_C": 914.91, "Tvap_IVTBC_C": 722.43, "diff_K": 192.49, "safe": true},
+  "ring_3": {"r_cm": 19.15, "Tvap_analytical_C": 648.56, "Tvap_IVTBC_C": 643.90, "diff_K": 4.66, "safe": true}
+}
