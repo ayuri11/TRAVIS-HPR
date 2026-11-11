@@ -272,7 +272,7 @@ def main():
         print(f"\nIndicative only (point-like hot spots make this grid-dependent, do not quote): hottest graphite point in the 2-D model is T_ref + {res['_Tgmax_rel_K']:.0f} K = {a.Tinf + GAP + res['_Tgmax_rel_K'] - 273.15:.0f} C; Table 4.5 Tmax (ring-mean CFD) is lower. Compare once real data is in.")
     report(res, a.Tinf, a.L, a.rp)
     hot = [x for x in res['cond' if 'cond' in res else 'r30']['rings']]
-    print("\nCFD of the hottest pipe in each ring (default 'cond' assignment): run from your PHASE 3 folder")
+    print("\nCFD of the hottest pipe in each ring (default 'cond' assignment): run from 03_thermal_hydraulics")
     print("  python ivtbc_multi_ring_v10.py --counts 1 1 1 1 --L %.2f --Tinf %g --tag hotpipe --ringW %s"
           % (a.L, a.Tinf, ' '.join(f"{x['Q_max']:.1f}" for x in hot)))
     json.dump({'layout': lay['layout'], 'args': vars(a), 'pin_P': [float(v) for v in pin_P],

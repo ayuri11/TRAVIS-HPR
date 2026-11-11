@@ -315,7 +315,7 @@ for L, (ok, n, okp, npp) in _scores.items():
     print(f"layout {L}: fuel-pin centres that land in UO2: {ok}/{n};  pipe centres that land in sodium: {okp}/{npp}")
 _good = [L for L, (ok, n, okp, npp) in _scores.items() if ok == n and okp == npp and n > 0]
 if len(_good) != 1:
-    raise SystemExit("Layout check did not single out one layout (see scores above). Do not run transport.")
+    raise SystemExit("Layout check did not single out one layout (see scores above). Check the layout definition.")
 TL.save_layout(_good[0], 'pin_layout.json')
 print(f"==> lattice layout is '{_good[0]}'; wrote pin_layout.json")
 if '--check' in sys.argv:

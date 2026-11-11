@@ -7,7 +7,7 @@ audit_repo.py - run this on your messy working folder BEFORE committing.
 It reports, and never modifies or deletes anything:
   1. files that should NOT go to GitHub (statepoints, VTK, big arrays, CFD time directories, anything > 25 MB)
   2. code that contains machine-specific absolute paths (/home/..., /Users/..., C:\\...) or placeholders
-  3. version clutter (name_v1, name_v2 ...): which is the newest, so you can move the rest to archive_superseded/
+  3. version clutter (name_v1, name_v2 ...): which is the newest, so you can remove the rest and log them in docs/DESIGN_HISTORY.md
   4. python files that import a local module that does not exist in the folder
   5. scripts that write output files without a visible output path (hard to reproduce)
 """
@@ -69,7 +69,7 @@ def main():
             pass
     print(f"  -> {n} lines. Replace with paths relative to the script (Path(__file__).parent) or a command-line argument.\n")
 
-    print("== 3. version clutter (keep newest in place, move older to archive_superseded/) ==")
+    print("== 3. version clutter (keep newest in place, remove older, log in docs/DESIGN_HISTORY.md) ==")
     groups = {}
     for p in files:
         m = VER_RE.match(os.path.basename(p))
@@ -80,7 +80,7 @@ def main():
         if len(lst) > 1:
             lst.sort(); shown += 1
             print(f"  {os.path.relpath(d, root)}/{base}_v*{rest}: newest v{lst[-1][0]}; older: " + ', '.join(f"v{n}" for n, _ in lst[:-1]))
-    print(f"  -> {shown} families. 'Newest' is not the same as 'valid': check docs/PROVENANCE.md before deleting anything.\n")
+    print(f"  -> {shown} families. 'Newest' is not the same as 'valid': check docs/RESULTS_MAP.md before deleting anything.\n")
 
     print("== 4. missing local imports ==")
     local = {os.path.splitext(os.path.basename(p))[0] for p in files if p.endswith('.py')}
