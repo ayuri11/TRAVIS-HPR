@@ -24,3 +24,5 @@ __pycache__/
 # large files go to Google Drive/Zenodo (see docs/REPRODUCE.md), never plain git
 *.zip
 *.mp4
+03_thermal_hydraulics/openfoam_case/0/uniform/
+03_thermal_hydraulics/openfoam_case/0/solid/wallHeatFlux
