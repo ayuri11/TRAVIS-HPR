@@ -1,0 +1,128 @@
+FoamFile { format ascii; class dictionary; object snappyHexMeshDict; }
+
+castellatedMesh true;
+snap            true;
+addLayers       false;
+
+geometry
+{
+    heatPipe.stl
+    {
+        type triSurfaceMesh;
+        name heatPipe_wall;
+    }
+    fuelPin1.stl
+    {
+        type triSurfaceMesh;
+        name fuelPin1_wall;
+    }
+    fuelPin2.stl
+    {
+        type triSurfaceMesh;
+        name fuelPin2_wall;
+    }
+}
+
+castellatedMeshControls
+{
+    maxLocalCells       500000;
+    maxGlobalCells      2000000;
+    minRefinementCells  5;
+    maxLoadUnbalance    0.10;
+    nCellsBetweenLevels 2;
+    resolveFeatureAngle 30;
+    allowFreeStandingZoneFaces true;
+
+    features
+    (
+        { file "heatPipe.eMesh";  level 2; }
+        { file "fuelPin1.eMesh";  level 1; }
+        { file "fuelPin2.eMesh";  level 1; }
+    );
+
+    refinementSurfaces
+    {
+        heatPipe_wall
+        {
+            level (2 3);
+            patchInfo { type wall; }
+            // Remove cells inside pipe - graphite only
+            faceZone heatPipe_wall;
+            cellZone heatPipe_wall;
+            cellZoneInside inside;
+        }
+        fuelPin1_wall
+        {
+            level (1 2);
+            patchInfo { type wall; }
+            faceZone fuelPin1_wall;
+            cellZone fuelPin1_wall;
+            cellZoneInside inside;
+        }
+        fuelPin2_wall
+        {
+            level (1 2);
+            patchInfo { type wall; }
+            faceZone fuelPin2_wall;
+            cellZone fuelPin2_wall;
+            cellZoneInside inside;
+        }
+    }
+
+    refinementRegions {}
+
+    // locationInMesh must be in graphite region - outside all pipes
+    locationInMesh (0.020 0.010 0.80);
+}
+
+snapControls
+{
+    nSmoothPatch        5;
+    tolerance           2.0;
+    nSolveIter          50;
+    nRelaxIter          10;
+    nFeatureSnapIter    15;
+    implicitFeatureSnap false;
+    explicitFeatureSnap true;
+    multiRegionFeatureSnap false;
+}
+
+addLayersControls
+{
+    relativeSizes       true;
+    layers {}
+    expansionRatio      1.0;
+    finalLayerThickness 0.3;
+    minThickness        0.1;
+    nGrow               0;
+    featureAngle        60;
+    nRelaxIter          5;
+    nSmoothSurfaceNormals 1;
+    nSmoothNormals      3;
+    nSmoothThickness    10;
+    maxFaceThicknessRatio 0.5;
+    maxThicknessToMedialRatio 0.3;
+    minMedianAxisAngle  90;
+    nBufferCellsNoExtrude 0;
+    nLayerIter          50;
+}
+
+meshQualityControls
+{
+    maxNonOrtho         75;
+    maxBoundarySkewness 20;
+    maxInternalSkewness 4;
+    maxConcave          80;
+    minVol              1e-13;
+    minTetQuality       1e-30;
+    minArea             -1;
+    minTwist            0.01;
+    minDeterminant      0.001;
+    minFaceWeight       0.02;
+    minVolRatio         0.01;
+    minTriangleTwist    -1;
+    nSmoothScale        4;
+    errorReduction      0.75;
+}
+
+mergeTolerance 1e-6;

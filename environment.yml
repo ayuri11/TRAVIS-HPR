@@ -1,0 +1,13 @@
+name: travis
+channels: [conda-forge]
+dependencies:
+  - python>=3.10
+  - openmc          # pin the version you actually used: run `openmc --version` and edit this line
+  - numpy
+  - scipy
+  - h5py
+  - matplotlib
+  - pip
+  - pip:
+      - CoolProp    # Brayton-cycle sink temperature
+# After a clean run on your machine, replace this file with the output of:  conda env export --no-builds > environment.yml

@@ -1,0 +1,22 @@
+FoamFile { format ascii; class dictionary; object topoSetDict; }
+actions
+(
+    {
+        name    hpNearFaces;
+        type    faceSet;
+        action  new;
+        source  cylinderToFace;
+        point1  (0.0256 0.0069 0.0);
+        point2  (0.0256 0.0069 1.6);
+        radius  0.00460;
+    }
+    {
+        name    hpCoreFaces;
+        type    faceSet;
+        action  subset;
+        source  cylinderToFace;
+        point1  (0.0256 0.0069 0.0);
+        point2  (0.0256 0.0069 1.6);
+        radius  0.00440;
+    }
+);

@@ -1,0 +1,24 @@
+FoamFile { format ascii; class dictionary; object topoSetDict; }
+actions
+(
+    {
+        name    allCells;
+        type    cellSet;
+        action  new;
+        source  allCells;
+    }
+    {
+        name    graphiteCells;
+        type    cellSet;
+        action  new;
+        source  cellSet;
+        set     allCells;
+    }
+    {
+        name    graphiteCells;
+        type    cellSet;
+        action  subtract;
+        source  cellSet;
+        set     heatPipeCells;
+    }
+);

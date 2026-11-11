@@ -1,0 +1,11 @@
+FoamFile { format ascii; class dictionary; object createPatchDict; }
+pointSync false;
+patches
+(
+    {
+        name heatPipe_wall;
+        patchInfo { type wall; }
+        constructFrom set;
+        set heatPipeFaces;
+    }
+);
